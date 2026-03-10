@@ -1,0 +1,249 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rojo:         #c0392b;
+    --rojo-hover:   #e74c3c;
+    --fondo:        #080808;
+    --superficie:   #111111;
+    --borde:        #1e1e1e;
+    --texto:        #f0f0f0;
+    --texto-suave:  #888888;
+    --texto-sutil:  #444444;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ─────────────────────────────────────────────────── */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 18px 48px;
+    background-color: var(--superficie);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--rojo);
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-transform: lowercase;
+    margin-right: auto;
+}
+
+nav a:not(.brand) {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+nav a:not(.brand):hover {
+    color: var(--texto);
+}
+
+/* ── LAYOUT ──────────────────────────────────────────────── */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 32px;
+}
+
+/* ── HERO (página principal) ─────────────────────────────── */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.portada {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow:
+        0 8px 80px rgba(192, 57, 43, 0.40),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+}
+
+.hero-meta .tipo {
+    font-size: 0.68rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 16px;
+}
+
+.hero-meta h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 0.88;
+    text-transform: lowercase;
+    margin-bottom: 22px;
+    color: var(--texto);
+}
+
+.hero-meta .artista {
+    font-size: 1.25rem;
+    color: var(--texto-suave);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.hero-meta .anio {
+    font-size: 0.82rem;
+    color: var(--texto-sutil);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* ── BOTONES ─────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    background: var(--rojo);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.1s;
+    margin-right: 12px;
+}
+
+.btn:hover {
+    background: var(--rojo-hover);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--borde);
+    color: var(--texto-suave);
+}
+
+.btn-outline:hover {
+    background: var(--superficie);
+    color: var(--texto);
+    transform: translateY(-1px);
+}
+
+/* ── ENCABEZADO DE SECCIÓN ───────────────────────────────── */
+.seccion-header {
+    margin-bottom: 48px;
+}
+
+.seccion-header .etiqueta {
+    font-size: 0.68rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 10px;
+}
+
+.seccion-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: lowercase;
+    color: var(--texto);
+}
+
+/* ── CARD ────────────────────────────────────────────────── */
+.card {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    padding: 40px 48px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--texto-sutil);
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--borde);
+    padding-bottom: 14px;
+}
+
+/* ── CAMPOS DE INFO ──────────────────────────────────────── */
+.campo {
+    display: flex;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borde);
+    align-items: baseline;
+}
+
+.campo:last-child {
+    border-bottom: none;
+}
+
+.campo-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rojo);
+    font-weight: 700;
+    min-width: 110px;
+    flex-shrink: 0;
+}
+
+.campo-valor {
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+/* ── FILAS DE CRÉDITOS ───────────────────────────────────── */
+.credito-row {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.credito-row:last-child {
+    border-bottom: none;
+}
+
+.credito-rol {
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 10px;
+}
+
+.credito-nombre {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 4px;
+}
+
+.credito-handle {
+    font-size: 0.85rem;
+    color: var(--texto-sutil);
+}
