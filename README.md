@@ -179,7 +179,8 @@ src/
 
 ## Deployment on AWS
 
-> Evidence of the live deployment will be added here after the AWS instance is configured.
+> Deployed on AWS EC2 (t2.micro, Amazon Linux 2023, us-east-1).
+> Public IP: `100.31.152.212` — accessible at `http://100.31.152.212:8080/`
 
 ### Steps followed
 
