@@ -179,16 +179,20 @@ src/
 
 ## Deployment on AWS
 
-> Deployed on AWS EC2 (t2.micro, Amazon Linux 2023, us-east-1).
-> Public IP: `100.31.152.212` — accessible at `http://100.31.152.212:8080/`
+Deployed on AWS EC2 (t2.micro, Amazon Linux 2023, us-east-1).  
+Public IP: `100.31.152.212` — `http://100.31.152.212:8080/`
 
 ### Steps followed
 
 1. Launch an EC2 instance (Amazon Linux 2023, t2.micro)
 2. Open inbound port `8080` in the instance Security Group
-3. Install Java 21:
+3. Install dependencies:
    ```bash
+   sudo dnf install git -y
    sudo dnf install java-21-amazon-corretto -y
+   export JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto.x86_64
+   export PATH=$JAVA_HOME/bin:$PATH
+   sudo dnf install maven -y
    ```
 4. Clone the repository and compile:
    ```bash
@@ -200,7 +204,16 @@ src/
    ```bash
    java -cp target/classes co.edu.escuelaing.MicroSpringBoot
    ```
-6. Access the application at `http://<EC2_PUBLIC_IP>:8080`
+6. Access the application at `http://100.31.152.212:8080`
+
+### Evidence
+
+| | | | |
+|---|---|---|---|
+| ![](img/1.png) | ![](img/2.png) | ![](img/3.png) | ![](img/4.png) |
+| ![](img/5.png) | ![](img/6.png) | ![](img/7.png) | ![](img/8.png) |
+| ![](img/9.png) | ![](img/10.png) | ![](img/11.png) | ![](img/12.png) |
+| ![](img/13.png) | ![](img/14.png) | ![](img/15.png) | ![](img/16.png) |
 
 ---
 
